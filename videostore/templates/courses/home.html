@@ -19,7 +19,7 @@
 
                 <h3>{{ el.title }}</h3>
 
-                <a href="#">Смотреть курс</a>
+                <a href="{{ el.get_absolute_url }}">Смотреть курс</a>
             </div>
         {%  endfor %}
     </div>
