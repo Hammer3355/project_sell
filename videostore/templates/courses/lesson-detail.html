@@ -15,15 +15,12 @@
             </div>
 
         <div class="aside">
-            <h1>Описание курса</h1>
-            <p>{{ object.desc }}</p>
-
-            <ul>
-                {% for el in lessons %}
-                    <li><a href="{{ el.get_absolute_url }}">{{ el.title }}</a></li>
-                {% endfor %}
-            </ul>
-
+            <h1>{{ lesson.title }}</h1>
+            <p>{{ lesson.desc }}</p>
+            <iframe width="560" height="315" src="{{ lesson.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
 {% endblock %}
+
+
+

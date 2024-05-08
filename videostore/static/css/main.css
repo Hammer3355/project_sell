@@ -47,6 +47,7 @@ header nav a {
 .courses {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .courses .course {
@@ -79,6 +80,17 @@ header nav a {
     transform: scale(1.1);
 }
 
+.courses ul {
+    width: 90%;
+    line-height: 170%;
+    margin-left: 7%;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.aside {width: 560px}
+.aside p {margin: 20px 0;}
+
 .presentation {
     background: #ca5e48;
     padding: 50px;
@@ -94,8 +106,8 @@ header nav a {
 }
 
 .presentation p {
-    color: #622424;
-    font-size: 16px;
+    color: #d6ccf3;
+    font-size: 18px;
     padding-top: 6px;
     max-width: 380px;
 }
