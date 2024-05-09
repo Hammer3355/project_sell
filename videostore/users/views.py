@@ -1,48 +1,38 @@
 from django.shortcuts import render, redirect
-# from django.contrib.auth.forms import UserCreationForm
-from .forms import UserRegisterForm, ProfileImageForm, UserUpdateForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from .forms import UserOurRegistraion, ProfileImage, UserUpdateForm
 
 def register(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
+    if request.method == "POST":
+        form = UserOurRegistraion(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Пользователь {username} был успешно создан!')
-            return redirect('home')
-
+            messages.success(request, f'Аккаунт {username} был создан, введите имя пользователя и пароль для авторизации')
+            return redirect('user')
     else:
-        form = UserRegisterForm()
-
-    return render(
-        request, 
-        'users/register.html', 
-        {
-            'title': 'Страница регистрации',
-            'form': form
-            }
-        )
+        form = UserOurRegistraion()
+    return render(request, 'users/registraion.html', {'form': form, 'title':'Регистрация пользователя'})
 
 @login_required
 def profile(request):
-    if request.method == 'POST':
-        profileForm = ProfileImageForm(request.POST, request.FILES, instance=request.user.profile)
-        updateUserForm = UserUpdateForm(request.POST, instance=request.user)
+    if request.method == "POST":
+        img_profile = ProfileImage(request.POST, request.FILES, instance=request.user.profile)
+        update_user = UserUpdateForm(request.POST, instance=request.user)
 
-        if profileForm.is_valid() and updateUserForm.is_valid():
-            profileForm.save()
-            updateUserForm.save()
-            messages.success(request, f'Ваш профиль был успешно обновлен!')
+        if update_user.is_valid() and img_profile.is_valid():
+            update_user.save()
+            img_profile.save()
+            messages.success(request, f'Ваш аккаунт был успешно обновлен')
             return redirect('profile')
     else:
-        profileForm = ProfileImageForm(instance=request.user.profile)
-        updateUserForm = UserUpdateForm(instance=request.user)
+        img_profile = ProfileImage(instance=request.user.profile)
+        update_user = UserUpdateForm(instance=request.user)
 
     data = {
-        'profileForm': profileForm,
-        'updateUserForm': updateUserForm
+        'img_profile': img_profile,
+        'update_user': update_user
     }
 
     return render(request, 'users/profile.html', data)

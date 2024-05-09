@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+    <div class="form-section container">
+        <h2>Востановление парося</h2>
+        <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-danger" type="submit">Востановить пароль</button>
+    </div>
+{% endblock main %}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 
 * {
     margin: 0;
@@ -69,7 +69,7 @@ header nav a {
 
 .courses .course a {
     display: inline-block;
-    padding: 10px 12px; 
+    padding: 10px 12px;
     border-radius: 5px;
     background: #111;
     color: #fff;
@@ -106,8 +106,8 @@ header nav a {
 }
 
 .presentation p {
-    color: #d6ccf3;
-    font-size: 18px;
+    color: #622424;
+    font-size: 16px;
     padding-top: 6px;
     max-width: 380px;
 }
@@ -116,8 +116,50 @@ header nav a {
     float: right;
     width: 200px;
     position: relative;
-    top: 20px;
+    top: 20.5px;
 }
+
+.form-section {
+    box-sizing: border-box;
+    background: #fff;
+    padding: 40px 30px;
+    box-shadow: 0px 2px 4px 0px rgb(5 5 5 / 5%);
+}
+
+form label {
+    margin-top: 15px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+form .helptext {
+    font-size: 13px;
+    display: block;
+    color: #5e5e5e;
+}
+
+form input {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    width: 300px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+form button {
+    padding: 7px 12px;
+    border-radius: 5px;
+    border: 0;
+    background: black;
+    color: #fff;
+    transition: transform 500ms ease;
+    cursor: pointer;
+}
+form button:hover {transform: scale(1.2);}
+hr {margin: 10px 0;}
 
 footer {
     margin-top: 50px;

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+    <div class="form-section container">
+        <h2>Регистрация на сайте</h2>
+        <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-outline-warning" type="submit">Зарегистрироваться</button>
+    </form>
+        <hr>
+        <p>Уже есть аккаунт? <a href="{% url 'user' %}">Войти</a></p>
+    </div>
+{% endblock main %}
+
+

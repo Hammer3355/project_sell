@@ -5,6 +5,7 @@ from PIL import Image
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE) # OneToOneField - ОДИН К ОДНОМУ
+    # Заменить картинку по умолчанию. После удалить этот коментарий
     img = models.ImageField('Фото пользователя', upload_to='user_images', default='default.png')
 
     def __str__(self):
