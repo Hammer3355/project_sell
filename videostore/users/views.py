@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserOurRegistraion, ProfileImage, UserUpdateForm
 
+
 def register(request):
     if request.method == "POST":
         form = UserOurRegistraion(request.POST)
@@ -13,7 +14,7 @@ def register(request):
             return redirect('user')
     else:
         form = UserOurRegistraion()
-    return render(request, 'users/registraion.html', {'form': form, 'title':'Регистрация пользователя'})
+    return render(request, 'users/register.html', {'form': form, 'title':'Регистрация пользователя'})
 
 @login_required
 def profile(request):

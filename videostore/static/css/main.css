@@ -12,7 +12,7 @@ body {
 }
 
 a {
-    color: #6f6f6f;
+    color: #403f3f;
     text-decoration: none;
     transition: color 500ms ease;
 }
@@ -71,7 +71,7 @@ header nav a {
     display: inline-block;
     padding: 10px 12px;
     border-radius: 5px;
-    background: #111;
+    background: #701ecf;
     color: #fff;
     transition: transform 500ms ease;
 }
@@ -106,7 +106,7 @@ header nav a {
 }
 
 .presentation p {
-    color: #622424;
+    color: #dfd4d4;
     font-size: 16px;
     padding-top: 6px;
     max-width: 380px;
@@ -149,7 +149,8 @@ form input {
     font-size: 14px;
 }
 
-form button {
+.form-section button {
+    margin-top: 20px;
     padding: 7px 12px;
     border-radius: 5px;
     border: 0;
@@ -158,7 +159,7 @@ form button {
     transition: transform 500ms ease;
     cursor: pointer;
 }
-form button:hover {transform: scale(1.2);}
+.form-section button:hover {transform: scale(1.2);}
 hr {margin: 10px 0;}
 
 footer {

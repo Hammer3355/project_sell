@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'courses.apps.CoursesConfig',
+    'courses',
     'users.apps.UsersConfig',
 ]
 
@@ -112,6 +112,15 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'zalarilogist@gmail.com'
+EMAIL_HOST_PASSWORD = 'tkrw isag psiv ygui'
+
+
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
@@ -125,5 +134,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = 'users'
+LOGIN_URL = 'user'
 LOGIN_REDIRECT_URL = 'home'

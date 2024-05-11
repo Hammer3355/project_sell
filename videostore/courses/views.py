@@ -1,5 +1,10 @@
+from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Course, Lesson
+
+
+def tarrifsPage(request):
+    return render(request, 'courses/tarrifs.html', {'title': 'Тарифы'})
 
 
 class HomePage(ListView):
@@ -35,7 +40,7 @@ class LessonDetailPage(DetailView):
         course = Course.objects.filter(slug=self.kwargs['slug']).first()
         lesson = Lesson.objects.filter(slug=self.kwargs['lesson_slug']).first()
 
-        # lesson.video = lesson.split("v=")[1].split("&")[0]
+        # lesson.video = lesson.split("v=")[1]
 
         ctx['title'] = lesson
         ctx['lesson'] = lesson
