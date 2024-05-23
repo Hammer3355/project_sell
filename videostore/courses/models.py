@@ -1,11 +1,12 @@
 from django.db import models
 from django.urls import reverse
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Course(models.Model):
     slug = models.SlugField('Имя курса на латинице')
     title = models.CharField('Название курса', max_length=120)
-    desc = models.TextField('Описание курса')
+    desc = RichTextUploadingField('Описание')
     image = models.ImageField('Изображение курса', default='default.png', upload_to='course_images')
     is_free = models.BooleanField('Бесплатный курс?', default=True)
 
@@ -23,7 +24,7 @@ class Course(models.Model):
 class Lesson(models.Model):
     slug = models.SlugField('Имя урока на латинице')
     title = models.CharField('Название урока', max_length=120)
-    desc = models.TextField('Описание урока')
+    desc = RichTextUploadingField('Описание')
     course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='Какой курс?')
     number = models.IntegerField('Номер урока')
     video = models.CharField('Ссылка на видео', max_length=200)

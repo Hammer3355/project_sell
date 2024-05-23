@@ -8,10 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
     <header class="container">
-        <span class="logo">Lear&Rock</span>
+        <span class="logo"><img src="/pictures/IMG_7474.png"></span>
         <nav>
             <a href="{% url 'home' %}">Главная</a>
             <a href="{% url 'tarrifs' %}">Тарифы</a>
@@ -26,6 +27,6 @@
     </header>
     {% block main %}
     {% endblock %}
-    <footer>Все права защищены</footer>
+    <footer>© 2020—2024 Правообладатель контента</footer>
 </body>
 </html>

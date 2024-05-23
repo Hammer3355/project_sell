@@ -19,8 +19,10 @@
 
 
             {% if object.is_free == True or user.profile.account_type == 'full' %}
-            <p>{{ lesson.desc }}</p>
-            <iframe width="560" height="315" src="{{ lesson.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>{{ lesson.desc|safe }}</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="{{ lesson.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>            
             {% else %}
             <p>Вам необходимо купить <a href="{% url 'tarrifs' %}">подписку</a></p>
             {% endif %}

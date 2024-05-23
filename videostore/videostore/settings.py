@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+zh#h1mto^r-(&l0932-35dy(d3jbnfjyw@-se9)rm$+3q_+=e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -38,7 +38,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courses',
     'users.apps.UsersConfig',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+
+
+SKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+CKEDITOR_UPLOAD_PATH = "course_images/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        # 'height': 300,
+        'width': '100%',
+    },
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,7 +140,6 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
 STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 
 MEDIA_URL = '/pictures/'
