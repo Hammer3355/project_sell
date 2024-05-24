@@ -1,248 +1,287 @@
+/* Импорт шрифта Montserrat с различными толщинами (300 и 600) из Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 
+/* Сброс отступов и полей для всех элементов */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Устанавливает отступы на 0 */
+    padding: 0; /* Устанавливает поля на 0 */
 }
 
+/* Стили для body */
 body {
-    background: #fef3e0;
-    font-weight: 300;
-    font-family: 'Montserrat', sans-serif;
+    background: #fef3e0; /* Устанавливает фоновый цвет тела документа */
+    font-weight: 300; /* Устанавливает начальную толщину шрифта */
+    font-family: 'Montserrat', sans-serif; /* Устанавливает шрифт Montserrat как основной */
 }
 
+/* Стили для ссылок */
 a {
-    color: #252525;
-    text-decoration: none;
-    transition: color 500ms ease;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    color: #252525; /* Устанавливает цвет текста ссылок */
+    text-decoration: none; /* Убирает подчеркивание текста ссылок */
+    transition: color 500ms ease; /* Добавляет плавный переход цвета при наведении на ссылку */
+    font-weight: 600; /* Устанавливает толщину шрифта для ссылок */
+    font-family: 'Montserrat', sans-serif; /* Устанавливает шрифт Montserrat для ссылок */
 }
 
+/* Стили для ссылок при наведении */
 a:hover {
-    color: #f10933;
+    color: #f10933; /* Меняет цвет текста ссылок при наведении */
 }
 
+/* Стили для контейнера */
 .container {
-    width: 1200px;
-    margin: 0 auto;
+    width: 1200px; /* Устанавливает фиксированную ширину контейнера */
+    margin: 0 auto; /* Центрирует контейнер по горизонтали */
 }
 
+/* Стили для header с классом container */
 header.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    display: flex; /* Устанавливает flexbox для контейнера */
+    justify-content: space-between; /* Размещает элементы на максимальном расстоянии друг от друга */
+    align-items: center; /* Центрирует элементы по вертикали */
+    margin-top: 50px; /* Устанавливает верхний отступ в 50px */
+    margin-bottom: 30px; /* Устанавливает нижний отступ в 30px */
 }
+
 
 header .logo img {
     max-width: 100%; /* Задаем максимальную ширину для логотипа */
     height: auto; /* Автоматически подгоняем высоту */
 }
 
+/* Стили для ссылок внутри навигации в header */
 header nav a {
-    margin-left: 15px;
+    margin-left: 15px; /* Устанавливает отступ слева в 15px для ссылок в навигации */
 }
 
-/* Уменьшаем контейнер для логотипа и ссылки в мобильной версии */
+/* Медиа-запрос для экранов шириной 768px и менее */
 @media (max-width: 768px) {
+    /* Стили для контейнера при малой ширине экрана */
     .container {
-        width: 90%;
+        width: 90%; /* Устанавливает ширину контейнера в 90% от ширины экрана */
     }
 
+    /* Стили для header с классом container при малой ширине экрана */
     header.container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Размещает элементы в колонку */
+        align-items: center; /* Центрирует элементы по горизонтали */
     }
 
+    /* Стили для логотипа внутри header при малой ширине экрана */
     header .logo {
-        margin-bottom: 20px;
+        margin-bottom: 20px; /* Устанавливает нижний отступ в 20px для логотипа */
     }
 
+    /* Стили для изображения логотипа внутри header при малой ширине экрана */
     header .logo img {
-        max-width: 80px; /* Задаем меньшую ширину для логотипа в мобильной версии */
+        max-width: 80px; /* Устанавливает максимальную ширину изображения логотипа в 80px */
     }
 
+    /* Стили для навигации внутри header при малой ширине экрана */
     header nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: flex; /* Устанавливает flexbox для навигации */
+        flex-direction: column; /* Размещает элементы навигации в колонку */
+        align-items: center; /* Центрирует элементы навигации по горизонтали */
     }
 
+    /* Стили для ссылок внутри навигации в header при малой ширине экрана */
     header nav a {
-        margin-left: 0;
-        margin-bottom: 10px;
+        margin-left: 0; /* Убирает отступ слева для ссылок в навигации */
+        margin-bottom: 10px; /* Устанавливает нижний отступ в 10px для ссылок в навигации */
     }
 }
 
-/* Примерные стили для других блоков */
+
+
+/* Стили для контейнера с курсами */
 .courses {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: flex; /* Устанавливает flexbox для контейнера с курсами */
+    justify-content: space-between; /* Размещает курсы на максимальном расстоянии друг от друга */
+    align-items: flex-start; /* Выравнивает курсы по верхней линии контейнера */
 }
 
+/* Стили для каждого отдельного курса */
 .courses .course {
-    background: #AEA3C2;
-    padding: 20px;
-    margin: 20px;
-    box-sizing: border-box;
-    width: 30%;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
+    background: #AEA3C2; /* Устанавливает фоновый цвет курса */
+    padding: 20px; /* Устанавливает внутренние отступы в 20px */
+    margin: 20px; /* Устанавливает внешние отступы в 20px */
+    box-sizing: border-box; /* Включает padding и border в ширину и высоту элемента */
+    width: 30%; /* Устанавливает ширину курса в 30% от контейнера */
+    color: #fff; /* Устанавливает цвет текста */
+    display: flex; /* Устанавливает flexbox для курса */
+    flex-direction: column; /* Размещает элементы внутри курса в колонку */
+    justify-content: space-between; /* Размещает элементы на максимальном расстоянии друг от друга */
+    height: 400px; /* Устанавливает высоту курса в 400px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляет тень */
+    transition: box-shadow 0.3s ease; /* Добавляет плавный переход для тени */
 }
 
+/* Стили для курса при наведении */
 .courses .course:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Увеличивает тень при наведении */
 }
 
+/* Стили для изображений внутри курса */
 .courses .course img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
+    width: 100%; /* Устанавливает ширину изображения в 100% от родительского элемента */
+    height: auto; /* Сохраняет соотношение сторон изображения */
+    max-height: 200px; /* Устанавливает максимальную высоту изображения в 200px */
+    object-fit: cover; /* Обрезает изображение, сохраняя его пропорции */
 }
 
+/* Стили для заголовков курсов */
 .courses .course h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    flex-grow: 1;
+    margin-top: 10px; /* Устанавливает верхний отступ в 10px */
+    margin-bottom: 5px; /* Устанавливает нижний отступ в 5px */
+    flex-grow: 1; /* Заполняет оставшееся пространство в колонке */
 }
 
+/* Стили для ссылок внутри курса */
 .courses .course a {
-    display: inline-block;
-    padding: 10px 12px;
-    border-radius: 5px;
-    background: #701ecf;
-    color: #fff;
-    transition: transform 500ms ease;
-    align-self: flex-start;
+    display: inline-block; /* Устанавливает блочный режим для ссылки */
+    padding: 10px 12px; /* Устанавливает внутренние отступы */
+    border-radius: 5px; /* Скругляет углы ссылки */
+    background: #701ecf; /* Устанавливает фоновый цвет ссылки */
+    color: #fff; /* Устанавливает цвет текста ссылки */
+    transition: transform 500ms ease; /* Добавляет плавный переход для трансформации */
+    align-self: flex-start; /* Выравнивает ссылку по началу оси элемента */
 }
 
+/* Стили для ссылки внутри курса при наведении */
 .courses .course a:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Увеличивает масштаб ссылки при наведении */
 }
 
+/* Стили для контейнера с курсами (обновление стилей) */
 .courses {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: wrap;
+    display: flex; /* Устанавливает flexbox для контейнера с курсами */
+    justify-content: space-between; /* Размещает курсы на максимальном расстоянии друг от друга */
+    align-items: stretch; /* Растягивает курсы по высоте контейнера */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
 }
 
+/* Медиа-запрос для экранов шириной 922px и менее */
 @media (max-width: 922px) {
     .courses {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Размещает курсы в колонку */
+        align-items: center; /* Центрирует курсы по горизонтали */
     }
 
     .courses .course {
-        width: 90%;
+        width: 90%; /* Устанавливает ширину курса в 90% от контейнера */
     }
 }
 
+/* Стили для списков внутри курсов */
 .courses ul {
-    width: 90%;
-    line-height: 170%;
-    margin-left: 7%;
-    margin-top: 20px;
-    font-weight: 600;
-    list-style-type: square;
+    width: 90%; /* Устанавливает ширину списка в 90% от контейнера */
+    line-height: 170%; /* Устанавливает межстрочное расстояние */
+    margin-left: 7%; /* Устанавливает отступ слева в 7% */
+    margin-top: 20px; /* Устанавливает верхний отступ в 20px */
+    font-weight: 600; /* Устанавливает толщину шрифта */
+    list-style-type: square; /* Устанавливает тип маркеров для списка */
 }
 
+/* Стили для блока aside */
 .aside {
-    width: 560px;
+    width: 560px; /* Устанавливает ширину блока aside */
 }
 
+/* Стили для параграфов внутри блока aside */
 .aside p {
-    margin: 20px 0;
+    margin: 20px 0; /* Устанавливает вертикальные отступы в 20px */
 }
 
+/* Стили для секции презентации */
 .presentation {
-    background: #ca5e48;
-    padding: 50px;
-    box-sizing: border-box;
-    margin-bottom: 70px;
-    max-width: 100%;
-    box-shadow: 0 6px 10px rgba(10, 10, 10, 0.2);
+    background: #ca5e48; /* Устанавливает фоновый цвет секции */
+    padding: 50px; /* Устанавливает внутренние отступы в 50px */
+    box-sizing: border-box; /* Включает padding и border в ширину и высоту элемента */
+    margin-bottom: 70px; /* Устанавливает нижний отступ в 70px */
+    max-width: 100%; /* Ограничивает максимальную ширину секции 100% */
+    box-shadow: 0 6px 10px rgba(10, 10, 10, 0.2); /* Добавляет тень */
 }
 
+/* Стили для заголовков внутри секции презентации */
 .presentation h2 {
-    word-wrap: break-word;
-    color: #fff;
-    font-size: 35px;
-    padding-top: 40px;
+    word-wrap: break-word; /* Переносит слова, если они не помещаются */
+    color: #fff; /* Устанавливает цвет текста */
+    font-size: 35px; /* Устанавливает размер шрифта */
+    padding-top: 40px; /* Устанавливает верхний отступ в 40px */
 }
 
+/* Стили для параграфов внутри секции презентации */
 .presentation p {
-    color: #dfd4d4;
-    font-size: 16px;
-    padding-top: 6px;
-    max-width: 380px;
+    color: #dfd4d4; /* Устанавливает цвет текста */
+    font-size: 16px; /* Устанавливает размер шрифта */
+    padding-top: 6px; /* Устанавливает верхний отступ в 6px */
+    max-width: 380px; /* Ограничивает максимальную ширину параграфа 380px */
 }
 
+/* Стили для изображений внутри секции презентации */
 .presentation img {
-    float: right;
-    width: 200px;
-    position: relative;
-    top: 30px;
+    float: right; /* Размещает изображение справа */
+    width: 200px; /* Устанавливает ширину изображения 200px */
+    position: relative; /* Устанавливает относительное позиционирование */
+    top: 30px; /* Сдвигает изображение вниз на 30px */
 }
 
-/* Базовые стили */
+/* Стили для секции формы */
 .form-section {
-    box-sizing: border-box;
-    background: #fff;
-    padding: 40px 30px;
-    box-shadow: 0px 2px 4px 0px rgb(5 5 5 / 5%);
+    box-sizing: border-box; /* Включает padding и border в ширину и высоту элемента */
+    background: #fff; /* Устанавливает фоновый цвет секции */
+    padding: 40px 30px; /* Устанавливает внутренние отступы */
+    box-shadow: 0px 2px 4px 0px rgb(5 5 5 / 5%); /* Добавляет тень */
 }
 
+/* Стили для меток внутри формы */
 form label {
-    margin-top: 15px;
-    display: inline-block;
-    font-weight: 600;
+    margin-top: 15px; /* Устанавливает верхний отступ в 15px */
+    display: inline-block; /* Устанавливает блочный режим для метки */
+    font-weight: 600; /* Устанавливает толщину шрифта */
 }
 
+/* Стили для текста помощи внутри формы */
 form .helptext {
-    font-size: 13px;
-    display: block;
-    color: #5e5e5e;
+    font-size: 13px; /* Устанавливает размер шрифта */
+    display: block; /* Устанавливает блочный режим */
+    color: #5e5e5e; /* Устанавливает цвет текста */
 }
 
+/* Стили для полей ввода внутри формы */
 form input {
-    font-family: 'Montserrat', sans-serif;
-    display: block;
-    width: 100%; /* Изменяем ширину на 100% */
-    padding: 10px 12px;
-    border-radius: 5px;
-    border: 1px solid silver;
-    margin: 10px 0;
-    font-size: 14px;
+    font-family: 'Montserrat', sans-serif; /* Устанавливает шрифт Montserrat */
+    display: block; /* Устанавливает блочный режим */
+    width: 100%; /* Устанавливает ширину на 100% */
+    padding: 10px 12px; /* Устанавливает внутренние отступы */
+    border-radius: 5px; /* Скругляет углы */
+    border: 1px solid silver; /* Устанавливает цвет границы */
+    margin: 10px 0; /* Устанавливает вертикальные отступы в 10px */
+    font-size: 14px; /* Устанавливает размер шрифта */
 }
 
+/* Стили для кнопок внутри секции формы */
 .form-section button {
-    margin-top: 20px;
-    padding: 7px 12px;
-    border-radius: 5px;
-    border: 0;
-    background: black;
-    color: #fff;
-    transition: transform 500ms ease;
-    cursor: pointer;
+    margin-top: 20px; /* Устанавливает верхний отступ в 20px */
+    padding: 7px 12px; /* Устанавливает внутренние отступы */
+    border-radius: 5px; /* Скругляет углы */
+    border: 0; /* Убирает границу */
+    background: black; /* Устанавливает фоновый цвет */
+    color: #fff; /* Устанавливает цвет текста */
+    transition: transform 500ms ease; /* Добавляет плавный переход для трансформации */
+    cursor: pointer; /* Устанавливает курсор-указатель */
 }
 
+/* Стили для кнопок внутри секции формы при наведении */
 .form-section button:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); /* Увеличивает масштаб кнопки при наведении */
 }
 
+/* Стили для горизонтальных линий */
 hr {
-    margin: 10px 0;
+    margin: 10px 0; /* Устанавливает вертикальные отступы в 10px */
 }
+
 
 /* Стили для адаптации под мобильные устройства */
 @media (max-width: 576px) {
@@ -279,166 +318,160 @@ hr {
 }
 
 
+/* Стили для горизонтальных линий */
 hr {
-    margin: 10px 0;
+    margin: 10px 0; /* Устанавливает вертикальные отступы в 10px */
 }
 
+/* Стили для контейнера внутри секции презентации */
 .presentation .container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    width: 100%; /* Устанавливает ширину контейнера на 100% */
+    max-width: 100%; /* Ограничивает максимальную ширину контейнера 100% */
+    margin: 0 auto; /* Центрирует контейнер по горизонтали */
 }
 
+/* Стили для курса */
 .course {
-    width: 100%;
-    overflow: hidden;
+    width: 100%; /* Устанавливает ширину курса на 100% */
+    overflow: hidden; /* Обрезает содержимое, выходящее за границы */
 }
 
+/* Стили для заголовков и параграфов внутри курса */
 .course h3,
 .course p {
-    width: 100%;
-    word-wrap: break-word;
-    hyphens: auto;
+    width: 100%; /* Устанавливает ширину на 100% */
+    word-wrap: break-word; /* Переносит слова, если они не помещаются */
+    hyphens: auto; /* Включает автоматические переносы */
 }
 
+/* Стили для футера */
 footer {
-    margin-top: 50px;
-    margin-bottom: 100px;
-    text-align: center;
+    margin-top: 50px; /* Устанавливает верхний отступ в 50px */
+    margin-bottom: 100px; /* Устанавливает нижний отступ в 100px */
+    text-align: center; /* Выравнивает текст по центру */
 }
 
+/* Медиа-запрос для экранов шириной 575px и менее */
 @media (max-width: 575px) {
     a {
-        display: block;
-        margin-bottom: 10px;
+        display: block; /* Устанавливает блочный режим для ссылок */
+        margin-bottom: 10px; /* Устанавливает нижний отступ в 10px */
     }
 }
 
+/* Медиа-запрос для экранов шириной 767px и менее */
 @media (max-width: 767px) {
     a {
-        display: block;
-        margin-bottom: 15px;
+        display: block; /* Устанавливает блочный режим для ссылок */
+        margin-bottom: 15px; /* Устанавливает нижний отступ в 15px */
     }
 
     .presentation h2 {
-        word-wrap: break-word;
-        color: #fff;
-        font-size: 20px;
-        padding-top: 40px;
+        word-wrap: break-word; /* Переносит слова, если они не помещаются */
+        color: #fff; /* Устанавливает цвет текста */
+        font-size: 20px; /* Уменьшает размер шрифта */
+        padding-top: 40px; /* Устанавливает верхний отступ в 40px */
     }
 
     .presentation p {
-        color: #dfd4d4;
-        font-size: 12px;
-        padding-top: 6px;
-        max-width: 380px;
+        color: #dfd4d4; /* Устанавливает цвет текста */
+        font-size: 12px; /* Уменьшает размер шрифта */
+        padding-top: 6px; /* Устанавливает верхний отступ в 6px */
+        max-width: 380px; /* Ограничивает максимальную ширину параграфа 380px */
     }
 
     .presentation img {
-        float: right;
-        width: 100px;
-        position: relative;
-        top: -40px;
-        margin-bottom: auto;
+        float: right; /* Размещает изображение справа */
+        width: 100px; /* Уменьшает ширину изображения до 100px */
+        position: relative; /* Устанавливает относительное позиционирование */
+        top: -40px; /* Сдвигает изображение вверх на 40px */
+        margin-bottom: auto; /* Убирает нижний отступ */
     }
 }
 
+/* Медиа-запрос для экранов шириной 991px и менее */
 @media (max-width: 991px) {
     a {
-        display: block;
-        margin-bottom: 20px;
+        display: block; /* Устанавливает блочный режим для ссылок */
+        margin-bottom: 20px; /* Устанавливает нижний отступ в 20px */
     }
 }
 
+
+/* Медиа-запрос для экранов шириной 1200px и менее */
 @media (max-width: 1200px) {
     a {
-        display: block;
-        margin-bottom: 20px;
+        display: block; /* Устанавливает блочный режим для ссылок */
+        margin-bottom: 20px; /* Устанавливает нижний отступ в 20px */
     }
 }
 
+/* Медиа-запрос для экранов шириной 768px и менее */
 @media (max-width: 768px) {
     .presentation {
-        max-width: 50%;
+        max-width: 50%; /* Ограничивает максимальную ширину презентации 50% */
+    }
+
+    .container {
+        width: 50%; /* Устанавливает ширину контейнера 50% */
+        margin: 0 auto; /* Центрирует контейнер по горизонтали */
     }
 }
 
+/* Медиа-запрос для экранов шириной 992px и менее */
 @media (max-width: 992px) {
     .presentation {
-        max-width: 70%;
+        max-width: 70%; /* Ограничивает максимальную ширину презентации 70% */
+    }
+
+    .container {
+        width: 70%; /* Устанавливает ширину контейнера 70% */
+        margin: 0 auto; /* Центрирует контейнер по горизонтали */
     }
 }
 
-@media (max-width: 1200px) {
-    .presentation {
-        max-width: 90%;
-    }
-}
-
+/* Медиа-запрос для экранов шириной 575px и менее */
 @media (max-width: 575px) {
     .container {
-        width: 30%;
-        margin: 0 auto;
-    }
-
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 50%;
-        margin: 0 auto;
+        width: 30%; /* Устанавливает ширину контейнера 30% */
+        margin: 0 auto; /* Центрирует контейнер по горизонтали */
     }
 }
 
-@media (max-width: 992px) {
-    .container {
-        width: 70%;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 1200px) {
-    .container {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .courses .course {
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-}
-
+/* Медиа-запрос для экранов шириной 922px и менее */
 @media (max-width: 922px) {
     .courses {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column; /* Размещает курсы в колонку */
+        align-items: center; /* Центрирует курсы по горизонтали */
+        justify-content: center; /* Выравнивает курсы по центру */
     }
 
     .courses .course {
-        background: #AEA3C2;
-        padding: 20px;
-        box-sizing: border-box;
-        width: 90%;
-        color: #fff;
+        background: #AEA3C2; /* Устанавливает фоновый цвет курса */
+        padding: 20px; /* Устанавливает внутренние отступы в 20px */
+        box-sizing: border-box; /* Включает padding и border в ширину и высоту элемента */
+        width: 90%; /* Устанавливает ширину курса 90% */
+        color: #fff; /* Устанавливает цвет текста */
     }
 }
 
+/* Стили для контейнера с видео */
 .video-container {
-    position: relative;
+    position: relative; /* Устанавливает относительное позиционирование */
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
+    height: 0; /* Устанавливает высоту 0 */
+    overflow: hidden; /* Скрывает содержимое, выходящее за границы */
+    max-width: 100%; /* Устанавливает максимальную ширину 100% */
+    background: #000; /* Устанавливает фоновый цвет */
 }
 
+/* Стили для iframe внутри контейнера с видео */
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+    position: absolute; /* Устанавливает абсолютное позиционирование */
+    top: 0; /* Размещает iframe в верхнем левом углу */
+    left: 0; /* Размещает iframe в верхнем левом углу */
+    width: 100%; /* Устанавливает ширину 100% */
+    height: 100%; /* Устанавливает высоту 100% */
+    border: 0; /* Убирает границу */
 }
+
