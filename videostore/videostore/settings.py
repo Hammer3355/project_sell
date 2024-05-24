@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'courses',
     'users.apps.UsersConfig',
     'ckeditor',
+    'debug_toolbar',
     'ckeditor_uploader',
 ]
 
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 # Корневой URL-файл для маршрутизации
@@ -134,3 +136,14 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'zalarilogist@gmail.com'
 EMAIL_HOST_PASSWORD = 'tkrw isag psiv ygui'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'videostore_cache'),
+    }
+}

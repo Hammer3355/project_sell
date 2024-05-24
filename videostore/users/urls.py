@@ -2,6 +2,7 @@ from django.urls import path
 from . import views as userViews
 from django.contrib.auth import views as authViews
 
+
 urlpatterns = [
     # Маршрут для регистрации нового пользователя
     path('reg/', userViews.register, name='reg'),
