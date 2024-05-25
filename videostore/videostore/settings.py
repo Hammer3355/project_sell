@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Настройки безопасности и отладки
 SECRET_KEY = 'django-insecure-+zh#h1mto^r-(&l0932-35dy(d3jbnfjyw@-se9)rm$+3q_+=e'
 DEBUG = True
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'sellmen.ru']
 
 # Определение установленных приложений
 INSTALLED_APPS = [
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'debug_toolbar',
     'ckeditor_uploader',
+    'social_django',
 ]
 
 # Настройки CKEditor
@@ -147,3 +148,17 @@ CACHES = {
         'LOCATION': os.path.join(BASE_DIR, 'videostore_cache'),
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.vk.VKOAuth2',
+    'social_core.backends.github.GithubOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GITHUB_KEY = 'Ov23ligaiDPtZH3RV7Tq'
+SOCIAL_AUTH_GITHUB_SECRET = '1ddb3dc2f71141fad9ddaaf348906a032b27fdf4'
+
+# SOCIAL_AUTH_VK_OAUTH2_KEY = '51930698'
+# SOCIAL_AUTH_VK_OAUTH2_SECRET = 'ldxBngAgpg3wcKf4QMhI'
+# SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
+

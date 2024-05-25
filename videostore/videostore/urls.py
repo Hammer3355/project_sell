@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('courses.urls')),
     path('user/', include('users.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('social-auth/', include('social_django.urls', namespace='social'))
 ]
 
 if settings.DEBUG:
