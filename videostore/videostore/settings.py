@@ -12,12 +12,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Определяем базовую директорию проекта
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Настройки безопасности и отладки
-SECRET_KEY = 'django-insecure-+zh#h1mto^r-(&l0932-35dy(d3jbnfjyw@-se9)rm$+3q_+=e'
+SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'sellmen.ru']
 
@@ -136,7 +139,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'zalarilogist@gmail.com'
-EMAIL_HOST_PASSWORD = 'tkrw isag psiv ygui'
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -155,10 +158,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_GITHUB_KEY = 'Ov23ligaiDPtZH3RV7Tq'
-SOCIAL_AUTH_GITHUB_SECRET = '1ddb3dc2f71141fad9ddaaf348906a032b27fdf4'
+SOCIAL_AUTH_GITHUB_KEY = os.getenv('SOCIAL_AUTH_GITHUB_KEY')
+SOCIAL_AUTH_GITHUB_SECRET = os.getenv('SOCIAL_AUTH_GITHUB_SECRET')
 
-# SOCIAL_AUTH_VK_OAUTH2_KEY = '51930698'
-# SOCIAL_AUTH_VK_OAUTH2_SECRET = 'ldxBngAgpg3wcKf4QMhI'
-# SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 
